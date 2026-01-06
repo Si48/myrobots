@@ -1,0 +1,195 @@
+<!DOCTYPE qna>
+<qna lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MyRobots/qna</title>
+    <style>
+        html, body {
+     margin: 0px;
+    width: 100%;
+    height: 100%;
+}
+.spacer {
+    height: 40px; /* change this for more/less space */
+}
+body {
+    display:flex;
+    flex-direction:column;
+    background-color: rgb(0, 0, 0);
+text-emphasis-color: white;
+    color: white;
+    width: 100%;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    text-align: center;
+}
+.text-top {
+        position:fixed;
+        margin-top: 50px;
+        top: 10;
+        text-align: center;
+    }
+.center-gif {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    bottom: 40px;
+      transform: translateY(25%); 
+}
+.moon-gif {
+    display: block;
+    width: 25%;
+    bottom: 0;
+
+}
+.robot-stack {
+ align-items: center; 
+flex-direction: column;
+display:flex;
+position: relative;
+/* width: 300px; */
+margin: auto;
+Transform: translateY(-10%);
+}
+.text-left {
+   display: block;
+    margin-left: auto;
+    margin-right: 100%;
+    width: 100%;
+    text-align: left;
+}
+.text-center {
+    display: block;
+     margin-left: 50px;
+     margin-right: 50px;
+     width: 0%;
+     text-align: center;
+}
+.right-gif {
+    display: block;
+    margin-left: 70px;
+    margin-right: 30px;
+    max-width: 100%;
+    top:0;
+}
+    .topBar {
+       position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;             /* always full screen */
+    display: flex;
+    justify-content: center;  /* centers the links inside */
+    gap: 30px;
+    background-color: #1e293b;
+    padding: 15px 0;
+    z-index: 100;
+    }
+    .text-bottum {
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        top: 1000;
+    }
+    .text-hidden {
+        color: black;
+        text-align: left;
+    }
+.botum-credits {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    color: darkgreen;
+}
+.textBox {
+    margin-bottom: 20px;
+    align-items: center;
+    border: 2px solid white;
+    padding: 10px;
+    border-radius: 5px;
+    width: 900px;
+}
+.button {
+    Transform:translateY(-10%);
+    background-color: #ffffff; /* black */
+    color: rgb(0, 0, 0);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <div class="topBar">
+    <nav>
+        <a href="frontpage.html" style="color: white; margin-right: 15px;">Home</a>
+        <a href="projects.html" style="color: white; margin-right: 15px;">Projects</a>
+        <a href="jokePage.html" style="color: white; margin-right: 15px;">Jokes</a>
+        <a href="qna.html" style="color: white; margin-right: 15px;">QnA</a>
+        <a href="contact.html" style="color: white; margin-right: 15px;">Contact</a>
+        <a href="logIn.html" style="color: white; margin-right: 15px;">Log In</a>
+        
+    </nav>
+    </div>
+    <p class="spacer"></p>
+    <h2>logIn</h2>
+<button onClick="login()" class="button">Login</button>
+
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+  import {
+    getAuth,
+    GoogleAuthProvider,
+    signInWithPopup,
+    onAuthStateChanged
+  } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDYBHEl6FA7pLy9xK7evpt6tIOe7kMGTPo",
+    authDomain: "myrobots-b7c56.firebaseapp.com",
+    projectId: "myrobots-b7c56",
+    storageBucket: "myrobots-b7c56.firebasestorage.app",
+    messagingSenderId: "386271837038",
+    appId: "1:386271837038:web:5ba3fd8cea3c254a451f7f",
+    measurementId: "G-FEBWT55QW0"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+
+  // Login function
+  window.login = function() {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const user = result.user;
+        console.log("User logged in: ", user.displayName);
+        alert("Logged in as: " + user.displayName);
+      })
+      .catch((error) => {
+        alert("Login failed: " + error.message);
+      });
+  };
+
+  // Detect login state changes
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      console.log("User is signed in:", user.displayName);
+    } else {
+      console.log("User is signed out");
+    }
+  });
+</script>
+
+</body>

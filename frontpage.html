@@ -1,0 +1,138 @@
+<!DOCTYPE frontpage>
+<frontpage lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MyRobots</title>
+    <style>
+
+html, body {
+     margin: 0px;
+    width: 100%;
+    height: 100%;
+}
+.spacer {
+    height: 40px; /* change this for more/less space */
+}
+body {
+    display:flex;
+    flex-direction:column;
+    background-color: black;
+text-emphasis-color: white;
+    color: white;
+    width: 100%;
+}
+.text-top {
+        position:fixed;
+        margin-top: 50px;
+        top: 10;
+        text-align: center;
+    }
+.center-gif {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    bottom: 40px;
+      transform: translateY(25%); 
+}
+.moon-gif {
+    display: block;
+    width: 25%;
+    bottom: 0;
+
+}
+.robot-stack {
+ align-items: center; 
+flex-direction: column;
+display:flex;
+position: relative;
+/* width: 300px; */
+margin: auto;
+Transform: translateY(-10%);
+}
+.text-left {
+   display: block;
+    margin-left: auto;
+    margin-right: 100%;
+    width: 100%;
+    text-align: left;
+}
+.text-center {
+    display: block;
+     margin-left: 50px;
+     margin-right: 50px;
+     width: 0%;
+     text-align: center;
+}
+.right-gif {
+    display: block;
+    margin-left: 70px;
+    margin-right: 30px;
+    max-width: 100%;
+    top:0;
+}
+    .topBar {
+       position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;             /* always full screen */
+    display: flex;
+    justify-content: center;  /* centers the links inside */
+    gap: 30px;
+    background-color: #1e293b;
+    padding: 15px 0;
+    z-index: 100;
+    }
+    .text-bottum {
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        top: 1000;
+    }
+    .text-hidden {
+        color: black;
+        text-align: left;
+    }
+.botum-credits {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    color: darkgreen;
+}
+
+    </style>
+</head>
+<body>
+    <nav class="topBar">
+       <a href="frontpage.html" style="color: white; margin-right: 15px;">Home</a>
+        <a href="projects.html" style="color: white; margin-right: 15px;">Projects</a>
+        <a href="jokePage.html" style="color: white; margin-right: 15px;">Jokes</a>
+        <a href="qna.html" style="color: white; margin-right: 15px;">QnA</a>
+        <a href="contact.html" style="color: white; margin-right: 15px;">Contact</a>
+        <a href="logIn.html" style="color: white; margin-right: 15px;">Log In</a>
+    </nav>
+<div class="spacer"></div>
+
+
+
+    <h1>Welcome to MyRobots</h1>
+   
+
+    <p class="text-left">This is a site, as you may know. It will be primarly used for the disberdution of info,-.</p>
+    <p class="text-left">aswell as certain designs (likely primarly focused on esp32/raspberrypi), physics, amoung other things.</p>
+    <p class="text-left">This site is currently planed top be updated every week, after posting. If any question arise or-</p>
+    <p class="text-left">remain, it's planned to add a qna page, or you may send an email to the adress provided on the contact page.</p>
+<div class="robot-stack">
+<img src="dancingRobot.gif" alt="Image not found" class="center-gif">
+ <img src="moonPic.png" alt="Image not found" class="moon-gif">
+</div>
+<div class="botum-credits">
+<p class="text-bottum">damanz.r48@gmail.com</p>
+<p class="text-bottum">© 2026  Silas's_W3bs!t3</p>
+</div>
+<a href="hidden.html" style="color: black;" >welcome buddy (?< </a>
+</body>
+</html>
